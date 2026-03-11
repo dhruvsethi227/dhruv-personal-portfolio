@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dhruv Sethi",
-  description: "Software Engineer in aerospace. Building systems that connect the physical and digital worlds.",
+  title: "Personal Portfolio | Aerospace & Soccer",
+  description: "Personal portfolio showcasing career highlights and achievements in aerospace and soccer",
 };
 
 export default function RootLayout({
