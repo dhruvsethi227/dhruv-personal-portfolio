@@ -1,7 +1,7 @@
 /**
  * Career highlights – copy from your LinkedIn Experience section.
  * Add one object per role; title, company, startDate, endDate match LinkedIn.
- * Use "Present" for current role. Optional: location, description (bullets or paragraph).
+ * Use "Present" for current role. Optional: location, description, tags.
  */
 
 export type CareerEntry = {
@@ -11,6 +11,7 @@ export type CareerEntry = {
   startDate: string;
   endDate: string; // e.g. "Present" for current role
   description?: string;
+  tags?: string[];
 };
 
 export const careerHighlights: CareerEntry[] = [
@@ -21,6 +22,7 @@ export const careerHighlights: CareerEntry[] = [
     endDate: "Present",
     description:
       "Add your role description from LinkedIn here. Focus on key responsibilities and impact.",
+    tags: ["Aerospace", "Systems", "TypeScript"],
   },
   // Paste additional roles from LinkedIn below. Example:
   // {
@@ -30,5 +32,6 @@ export const careerHighlights: CareerEntry[] = [
   //   startDate: "Month Year",
   //   endDate: "Month Year",
   //   description: "Brief description or key achievements.",
+  //   tags: ["Tag1", "Tag2"],
   // },
 ];

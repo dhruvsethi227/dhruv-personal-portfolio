@@ -1,17 +1,29 @@
+'use client';
+
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { careerHighlights } from '../data/career';
 import SectionHeader from './SectionHeader';
+import RocketTrail from './RocketTrail';
 
 export default function CareerTimeline() {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <section className="py-12">
+    <section ref={sectionRef} className="relative py-12">
+      <RocketTrail sectionRef={sectionRef} />
       <SectionHeader telemetry="// CAREER.LOG" title="Career Timeline" />
       <ul className="space-y-8">
         {careerHighlights.map((entry, i) => {
           const isCurrent = entry.endDate === 'Present';
           return (
-            <li
+            <motion.li
               key={i}
               className={`border-l-2 pl-6 ${isCurrent ? 'border-accent' : 'border-border-panel'}`}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.45, delay: i * 0.08, ease: 'easeOut' }}
             >
               <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                 <span className="font-medium text-text-primary">{entry.title}</span>
@@ -49,7 +61,7 @@ export default function CareerTimeline() {
                   ))}
                 </div>
               )}
-            </li>
+            </motion.li>
           );
         })}
       </ul>
