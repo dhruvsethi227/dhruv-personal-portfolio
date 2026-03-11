@@ -11,6 +11,7 @@ export type CareerEntry = {
   startDate: string;
   endDate: string; // e.g. "Present" for current role
   description?: string;
+  tags?: string[];
 };
 
 export const careerHighlights: CareerEntry[] = [
