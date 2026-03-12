@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, type Variants, type Easing } from 'framer-motion';
 import TypewriterText from './TypewriterText';
@@ -19,16 +20,22 @@ const item: Variants = {
 export default function HeroSection() {
   return (
     <motion.section
-      className="py-20 md:py-32 flex flex-col items-center text-center"
+      className="pt-8 pb-20 md:pt-12 md:pb-32 flex flex-col items-center text-center"
       variants={container}
       initial="hidden"
       animate="show"
     >
       {/* Profile picture */}
       <motion.div variants={item} className="mb-8">
-        <div className="w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-accent/40 bg-surface flex items-center justify-center overflow-hidden panel-brackets">
-          {/* Replace src with your actual photo */}
-          <span className="font-mono text-3xl text-text-secondary select-none">DS</span>
+        <div className="w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-accent/40 overflow-hidden">
+          <Image
+            src="/profile.jpeg"
+            alt="Dhruv Sethi"
+            width={144}
+            height={144}
+            className="w-full h-full object-cover scale-175"
+            priority
+          />
         </div>
       </motion.div>
 
