@@ -1,9 +1,12 @@
 import PageShell from './components/PageShell';
 import HeroSection from './components/HeroSection';
 import AskDhruv from './components/AskDhruv';
+import SideRockets from './components/SideRockets';
 
 export default function Home() {
   return (
+    <>
+    <SideRockets />
     <PageShell>
       <HeroSection />
       <AskDhruv />
@@ -11,5 +14,6 @@ export default function Home() {
         © {new Date().getFullYear()} Dhruv Sethi
       </footer>
     </PageShell>
+    </>
   );
 }
