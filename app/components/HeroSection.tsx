@@ -47,7 +47,7 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p variants={item} className="mt-4 text-xl text-accent font-mono">
-        <TypewriterText text="Software Engineer · Aerospace" delay={600} />
+        <TypewriterText text="Software Engineer · Los Angeles, CA" delay={600} />
       </motion.p>
 
       <motion.p

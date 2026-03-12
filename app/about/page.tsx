@@ -1,6 +1,7 @@
 import PageShell from '../components/PageShell';
 import SectionHeader from '../components/SectionHeader';
 import PanelCard from '../components/PanelCard';
+import CareerTimeline from '../components/CareerTimeline';
 import { aboutData } from '../data/about';
 
 export default function AboutPage() {
@@ -42,6 +43,8 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <CareerTimeline />
 
       <footer className="pt-16 border-t border-border-panel text-text-secondary text-sm font-mono">
         © {new Date().getFullYear()} Dhruv Sethi

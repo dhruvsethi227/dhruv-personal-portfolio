@@ -66,7 +66,9 @@ export default function AskDhruv() {
 
   return (
     <section className="py-16">
-      <SectionHeader telemetry="// ASK.DHRUV" title="Ask Me Anything" />
+      <div className="text-center">
+        <SectionHeader telemetry="// ASK.DHRUV" title="Ask Me Anything" />
+      </div>
       <PanelCard>
         {/* Suggested question chips */}
         <div className="flex flex-wrap gap-2 mb-5">
