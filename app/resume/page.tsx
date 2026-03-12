@@ -1,13 +1,23 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import PageShell from '../components/PageShell';
 import SectionHeader from '../components/SectionHeader';
 import PanelCard from '../components/PanelCard';
 import { resumeData } from '../data/resume';
 
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: 'easeOut' as const },
+};
+
 export default function ResumePage() {
   return (
     <PageShell>
-      <section className="py-12">
-        <SectionHeader telemetry="// RESUME.PDF" title="Resume" />
+      <section className="py-20">
+        <SectionHeader title="Resume" />
 
         {/* Download / View buttons */}
         <div className="flex flex-wrap gap-3 mb-12">
@@ -29,11 +39,8 @@ export default function ResumePage() {
         </div>
 
         {/* Education */}
-        <div className="mb-10">
-          <span className="font-mono text-xs text-text-label uppercase tracking-widest">
-            // EDUCATION.DAT
-          </span>
-          <h3 className="text-lg font-semibold text-text-primary mt-1 mb-4">Education</h3>
+        <motion.div className="mb-10" {...fadeUp}>
+          <h3 className="text-2xl font-bold text-text-primary mb-4">Education</h3>
           <div className="space-y-3">
             {resumeData.education.map((edu, i) => (
               <PanelCard key={i}>
@@ -48,18 +55,15 @@ export default function ResumePage() {
               </PanelCard>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Skills */}
-        <div className="mb-10">
-          <span className="font-mono text-xs text-text-label uppercase tracking-widest">
-            // SKILLS.LOG
-          </span>
-          <h3 className="text-lg font-semibold text-text-primary mt-1 mb-4">Skills</h3>
+        <motion.div className="mb-10" {...fadeUp}>
+          <h3 className="text-2xl font-bold text-text-primary mb-4">Skills</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {resumeData.skillGroups.map((group) => (
               <PanelCard key={group.label}>
-                <h4 className="font-mono text-xs text-text-label uppercase tracking-widest mb-3">
+                <h4 className="text-xs text-text-label uppercase tracking-widest mb-3">
                   {group.label}
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
@@ -75,15 +79,12 @@ export default function ResumePage() {
               </PanelCard>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Certifications (optional) */}
         {resumeData.certifications && resumeData.certifications.length > 0 && (
-          <div className="mb-10">
-            <span className="font-mono text-xs text-text-label uppercase tracking-widest">
-              // CERTS.DAT
-            </span>
-            <h3 className="text-lg font-semibold text-text-primary mt-1 mb-4">Certifications</h3>
+          <motion.div className="mb-10" {...fadeUp}>
+            <h3 className="text-2xl font-bold text-text-primary mb-4">Certifications</h3>
             <div className="space-y-3">
               {resumeData.certifications.map((cert, i) => (
                 <PanelCard key={i}>
@@ -97,7 +98,7 @@ export default function ResumePage() {
                 </PanelCard>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
       </section>
 

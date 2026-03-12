@@ -1,31 +1,36 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import PageShell from '../components/PageShell';
 import SectionHeader from '../components/SectionHeader';
 import PanelCard from '../components/PanelCard';
 import CareerTimeline from '../components/CareerTimeline';
 import { aboutData } from '../data/about';
 
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.5, ease: 'easeOut' as const },
+};
+
 export default function AboutPage() {
   return (
     <PageShell>
-      <section className="py-12">
-        <SectionHeader telemetry="// PROFILE.DAT" title="About" />
+      <section className="py-20">
+        <SectionHeader title="About" />
 
-        <div className="space-y-4 mb-12">
+        <motion.div className="space-y-4 mb-12" {...fadeUp}>
           {aboutData.bio.map((paragraph, i) => (
             <p key={i} className="text-text-secondary leading-relaxed">
               {paragraph}
             </p>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mb-2">
-          <span className="font-mono text-xs text-text-label uppercase tracking-widest">
-            // INTERESTS.LOG
-          </span>
-          <h3 className="text-lg font-semibold text-text-primary mt-1 mb-6">Interests</h3>
-        </div>
+        <h3 className="text-2xl font-bold text-text-primary mb-6">Interests</h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4" {...fadeUp}>
           {aboutData.interests.map((interest) => (
             <PanelCard key={interest.label}>
               <div className="flex items-start gap-3">
@@ -41,7 +46,7 @@ export default function AboutPage() {
               </div>
             </PanelCard>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <CareerTimeline />

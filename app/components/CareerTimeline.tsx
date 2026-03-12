@@ -12,7 +12,7 @@ export default function CareerTimeline() {
   return (
     <section ref={sectionRef} className="relative py-12">
       <RocketTrail sectionRef={sectionRef} />
-      <SectionHeader telemetry="// CAREER.LOG" title="Career Timeline" />
+      <SectionHeader title="Career Timeline" />
       <ul className="space-y-8">
         {careerHighlights.map((entry, i) => {
           const isCurrent = entry.endDate === 'Present';

@@ -21,25 +21,23 @@ export default function PageShell({ children }: PageShellProps) {
               style={{
                 left: `${(i * 7 + 3) % 100}%`,
                 top: `${(i * 11 + 5) % 100}%`,
-                width: `${(i % 3) + 1}px`,
-                height: `${(i % 3) + 1}px`,
-                opacity: 0.3 + (i % 5) * 0.1,
-                '--twinkle-duration': `${2 + (i % 4)}s`,
-                '--twinkle-delay': `${(i * 0.3) % 3}s`,
+                width: `${(i % 4) + 2}px`,
+                height: `${(i % 4) + 2}px`,
+                opacity: 0.5 + (i % 4) * 0.1,
+                '--twinkle-duration': `${1.5 + (i % 3)}s`,
+                '--twinkle-delay': `${(i * 0.25) % 2.5}s`,
               } as React.CSSProperties}
             />
           ))}
         </div>
-        {/* Dot grid */}
-        <div className="absolute inset-0 bg-dot-grid" />
         {/* Scan line */}
         <div
           style={{
             position: 'absolute',
             insetInline: 0,
-            height: '2px',
-            background:
-              'linear-gradient(to right, transparent, rgba(245,158,11,0.08), transparent)',
+            height: '3px',
+            background: 'linear-gradient(to right, transparent, rgba(245,158,11,0.35), transparent)',
+            boxShadow: '0 0 8px rgba(245,158,11,0.25)',
             animation: 'scanline 8s linear infinite',
             pointerEvents: 'none',
           }}
