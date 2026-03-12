@@ -20,7 +20,7 @@ const item: Variants = {
 export default function HeroSection() {
   return (
     <motion.section
-      className="pt-8 pb-20 md:pt-12 md:pb-32 flex flex-col items-center text-center"
+      className="pt-8 pb-10 md:pt-12 md:pb-16 flex flex-col items-center text-center"
       variants={container}
       initial="hidden"
       animate="show"
