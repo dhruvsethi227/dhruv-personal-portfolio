@@ -43,7 +43,6 @@ export default function HeroSection() {
         variants={item}
         className="font-mono text-xs text-text-label uppercase tracking-widest mb-4"
       >
-        // SYSTEM.INIT
       </motion.p>
 
       <motion.h1

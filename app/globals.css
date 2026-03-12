@@ -47,6 +47,15 @@ html {
   animation: twinkle var(--twinkle-duration, 3s) ease-in-out var(--twinkle-delay, 0s) infinite alternate;
 }
 
+@keyframes rocketfly {
+  0%   { transform: translateY(100vh); }
+  100% { transform: translateY(-100vh); }
+}
+
+@media (max-width: 767px) {
+  .rocket { display: none; }
+}
+
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
