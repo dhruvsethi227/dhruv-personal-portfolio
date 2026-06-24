@@ -1,26 +1,40 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
 export default function OrbitAnimation() {
   const cx = 150;
   const cy = 150;
   const accent = 'rgba(232,24,90,';
+  const [sweepAngle, setSweepAngle] = useState(0);
+
+  useEffect(() => {
+    function onScroll() {
+      const scrolled = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? scrolled / maxScroll : 0;
+      setSweepAngle(progress * 360);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
-      {/* Radar sweep — rotating conic gradient */}
-      <div
-        className="absolute inset-0 rounded-full"
-        style={{
-          background: `conic-gradient(from 0deg, transparent 80%, ${accent}0.18) 90%, ${accent}0.04) 100%)`,
-          animation: 'orbit 4s linear infinite',
-          maskImage: 'radial-gradient(circle, black 99%, transparent 100%)',
-          WebkitMaskImage: 'radial-gradient(circle, black 99%, transparent 100%)',
-        }}
-      />
-
       <svg
         viewBox="0 0 300 300"
         className="absolute inset-0 w-full h-full"
         style={{ overflow: 'visible' }}
       >
+        {/* Radar sweep — scroll-driven rotation */}
+        <g transform={`translate(${cx}, ${cy})`}>
+          <g style={{ transform: `rotate(${sweepAngle}deg)` }}>
+            <line x1={0} y1={0} x2={0} y2={-120} stroke={`${accent}0.06)`} strokeWidth="40" strokeLinecap="round" />
+            <line x1={0} y1={0} x2={0} y2={-120} stroke={`${accent}0.14)`} strokeWidth="18" strokeLinecap="round" />
+            <line x1={0} y1={0} x2={0} y2={-120} stroke={`${accent}0.9)`}  strokeWidth="1.5" strokeLinecap="round" />
+          </g>
+        </g>
+
         {/* Static rings */}
         <circle cx={cx} cy={cy} r={120} fill="none" stroke={`${accent}0.12)`} strokeWidth="1" />
         <circle cx={cx} cy={cy} r={80}  fill="none" stroke={`${accent}0.18)`} strokeWidth="1" />
