@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, type Variants, type Easing } from 'framer-motion';
 import TypewriterText from './TypewriterText';
+import OrbitAnimation from './OrbitAnimation';
 
 const ease: Easing = 'easeOut';
 
@@ -81,6 +82,9 @@ export default function HeroSection() {
         >
           Ask AI ✦
         </Link>
+      </motion.div>
+      <motion.div variants={item} className="mt-12 opacity-80">
+        <OrbitAnimation />
       </motion.div>
     </motion.section>
   );
