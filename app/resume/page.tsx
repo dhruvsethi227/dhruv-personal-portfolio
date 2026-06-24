@@ -38,20 +38,61 @@ export default function ResumePage() {
           </a>
         </div>
 
-        {/* Education */}
+        {/* Experience */}
         <motion.div className="mb-10" {...fadeUp}>
-          <h3 className="text-2xl font-bold text-text-primary mb-4">Education</h3>
-          <div className="space-y-3">
-            {resumeData.education.map((edu, i) => (
+          <h3 className="text-2xl font-bold text-text-primary mb-4">Experience</h3>
+          <div className="space-y-4">
+            {resumeData.experience.map((entry, i) => (
               <PanelCard key={i}>
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="font-medium text-text-primary">{edu.degree}</span>
-                  <span className="font-mono text-xs text-text-secondary">{edu.year}</span>
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                  <span className="font-semibold text-text-primary text-base">{entry.company}</span>
+                  <span className="font-mono text-xs text-text-secondary">{entry.period}</span>
                 </div>
-                <p className="text-text-secondary text-sm mt-0.5">{edu.institution}</p>
-                {edu.notes && (
-                  <p className="text-text-secondary text-sm mt-2">{edu.notes}</p>
-                )}
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">
+                  <span className="text-accent text-sm font-medium">{entry.title}</span>
+                  <span className="font-mono text-xs text-text-secondary">{entry.location}</span>
+                </div>
+                <div className="space-y-5">
+                  {entry.roles.map((role, j) => (
+                    <div key={j}>
+                      <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                        <span className="text-text-primary text-sm font-medium italic">{role.team}</span>
+                        <span className="font-mono text-xs text-text-secondary">{role.period}</span>
+                      </div>
+                      <ul className="space-y-1.5">
+                        {role.bullets.map((bullet, k) => (
+                          <li key={k} className="flex gap-2 text-text-secondary text-sm leading-relaxed">
+                            <span className="text-accent mt-1 shrink-0">•</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </PanelCard>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Projects */}
+        <motion.div className="mb-10" {...fadeUp}>
+          <h3 className="text-2xl font-bold text-text-primary mb-4">Projects</h3>
+          <div className="space-y-4">
+            {resumeData.projects.map((project, i) => (
+              <PanelCard key={i}>
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
+                  <span className="font-semibold text-text-primary text-base">{project.name}</span>
+                  <span className="font-mono text-xs text-text-secondary">{project.role}</span>
+                </div>
+                <ul className="space-y-1.5">
+                  {project.bullets.map((bullet, j) => (
+                    <li key={j} className="flex gap-2 text-text-secondary text-sm leading-relaxed">
+                      <span className="text-accent mt-1 shrink-0">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </PanelCard>
             ))}
           </div>
@@ -81,7 +122,26 @@ export default function ResumePage() {
           </div>
         </motion.div>
 
-        {/* Certifications (optional) */}
+        {/* Education */}
+        <motion.div className="mb-10" {...fadeUp}>
+          <h3 className="text-2xl font-bold text-text-primary mb-4">Education</h3>
+          <div className="space-y-3">
+            {resumeData.education.map((edu, i) => (
+              <PanelCard key={i}>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="font-medium text-text-primary">{edu.institution}</span>
+                  <span className="font-mono text-xs text-text-secondary">{edu.location}</span>
+                </div>
+                <p className="text-text-secondary text-sm mt-0.5">{edu.degree}</p>
+                {edu.notes && (
+                  <p className="text-text-secondary text-sm mt-2">{edu.notes}</p>
+                )}
+              </PanelCard>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Certifications */}
         {resumeData.certifications && resumeData.certifications.length > 0 && (
           <motion.div className="mb-10" {...fadeUp}>
             <h3 className="text-2xl font-bold text-text-primary mb-4">Certifications</h3>
@@ -102,7 +162,7 @@ export default function ResumePage() {
         )}
       </section>
 
-      <footer className="pt-16 border-t border-border-panel text-text-secondary text-sm font-mono">
+      <footer className="pt-16 border-t border-border-panel text-text-secondary text-sm font-mono text-center">
         © {new Date().getFullYear()} Dhruv Sethi
       </footer>
     </PageShell>

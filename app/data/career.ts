@@ -16,22 +16,43 @@ export type CareerEntry = {
 
 export const careerHighlights: CareerEntry[] = [
   {
-    title: "Software Engineer",
-    company: "[Aerospace Company]",
-    startDate: "[Start]",
+    title: "Software Engineer II — Enterprise Operations (VPA)",
+    company: "Lockheed Martin",
+    location: "Los Angeles, CA",
+    startDate: "Sept 2025",
     endDate: "Present",
     description:
-      "Add your role description from LinkedIn here. Focus on key responsibilities and impact.",
-    tags: ["Aerospace", "Systems", "TypeScript"],
+      "Leading development of Portfolio Performance, a full-stack AI forecasting feature that surfaces at-risk tasks across 1,500+ programs. Designed REST APIs and dimensional data models serving SPI/BEI/CPLI metrics to real-time dashboards at sub-2-second latency.",
+    tags: ["Full-Stack", "AI/ML", "REST APIs", "RBAC"],
   },
-  // Paste additional roles from LinkedIn below. Example:
-  // {
-  //   title: "Previous Role Title",
-  //   company: "Company Name",
-  //   location: "City, State",
-  //   startDate: "Month Year",
-  //   endDate: "Month Year",
-  //   description: "Brief description or key achievements.",
-  //   tags: ["Tag1", "Tag2"],
-  // },
+  {
+    title: "Software Engineer II — Skunk Works, Ground Control Systems",
+    company: "Lockheed Martin",
+    location: "Los Angeles, CA",
+    startDate: "Aug 2023",
+    endDate: "Sept 2025",
+    description:
+      "Built production flight software across 10+ vehicle subsystems (Python, C++, Lua) in direct partnership with pilots and operators. Re-architected the Ground Vehicle Management System backend to cut processing runtime by 37% and built a CI/CD pipeline that reduced release time by 75%.",
+    tags: ["Python", "C++", "Lua", "CI/CD", "Flight Software"],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "PepsiCo",
+    location: "Dallas, TX",
+    startDate: "May 2022",
+    endDate: "Aug 2022",
+    description:
+      "Built React/Node.js API tooling that cut data query response time by 70%. Shipped an MVP meeting-room reservation app (Python/Flask) for 150+ users, winning 1st place in the PepsiCo Intern Challenge.",
+    tags: ["React", "Node.js", "Python", "Flask"],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "Sandia National Laboratories",
+    location: "Remote",
+    startDate: "May 2021",
+    endDate: "Apr 2022",
+    description:
+      "Built a full-stack app on IBM FileNet APIs that automated document parsing and improved data-retrieval speed by 55%. Provisioned AWS infrastructure (EC2, S3) as code with Terraform and Python.",
+    tags: ["AWS", "Terraform", "Python", "FileNet"],
+  },
 ];

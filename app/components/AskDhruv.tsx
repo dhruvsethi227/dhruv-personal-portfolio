@@ -1,8 +1,37 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
+import type { Components } from 'react-markdown';
 import SectionHeader from './SectionHeader';
 import PanelCard from './PanelCard';
+
+const markdownComponents: Components = {
+  p: ({ children }) => (
+    <p className="text-sm text-text-primary leading-relaxed mb-2 last:mb-0">{children}</p>
+  ),
+  strong: ({ children }) => (
+    <strong className="text-text-primary font-semibold">{children}</strong>
+  ),
+  ul: ({ children }) => (
+    <ul className="space-y-1 mb-2">{children}</ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="space-y-1 mb-2 list-decimal list-inside">{children}</ol>
+  ),
+  li: ({ children }) => (
+    <li className="flex gap-2 text-sm text-text-secondary">
+      <span className="text-accent mt-0.5 shrink-0">•</span>
+      <span>{children}</span>
+    </li>
+  ),
+  h3: ({ children }) => (
+    <h3 className="text-text-primary font-semibold text-sm mt-3 mb-1">{children}</h3>
+  ),
+  code: ({ children }) => (
+    <code className="font-mono text-xs text-accent bg-accent/10 px-1 rounded-sm">{children}</code>
+  ),
+};
 
 const SUGGESTED_QUESTIONS = [
   "What's your background?",
@@ -66,7 +95,7 @@ export default function AskDhruv() {
 
   return (
     <section className="py-16 text-center">
-      <SectionHeader title="Ask Me Anything" />
+      <SectionHeader title="Ask Dhruv AI" />
       <PanelCard>
         {/* Suggested question chips */}
         <div className="flex flex-wrap gap-2 mb-5">
@@ -100,12 +129,14 @@ export default function AskDhruv() {
               <p className="font-mono text-sm text-red-400">{error}</p>
             )}
             {response && (
-              <p className="font-mono text-sm text-text-primary whitespace-pre-wrap leading-relaxed">
-                {response}
+              <div className="text-left">
+                <ReactMarkdown components={markdownComponents}>
+                  {response}
+                </ReactMarkdown>
                 {loading && (
                   <span className="inline-block w-1.5 h-3.5 ml-0.5 bg-amber-400 animate-pulse align-middle" />
                 )}
-              </p>
+              </div>
             )}
           </div>
         )}

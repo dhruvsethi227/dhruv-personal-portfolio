@@ -51,7 +51,7 @@ export default function AboutPage() {
 
       <CareerTimeline />
 
-      <footer className="pt-16 border-t border-border-panel text-text-secondary text-sm font-mono">
+      <footer className="pt-16 border-t border-border-panel text-text-secondary text-sm font-mono text-center">
         © {new Date().getFullYear()} Dhruv Sethi
       </footer>
     </PageShell>

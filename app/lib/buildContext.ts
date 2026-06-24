@@ -1,4 +1,3 @@
-import { careerHighlights } from '../data/career';
 import { aboutData } from '../data/about';
 import { resumeData } from '../data/resume';
 
@@ -14,19 +13,29 @@ export function buildContext(): string {
     .join('\n');
   sections.push('## INTERESTS\n' + interests);
 
-  // CAREER
-  const career = careerHighlights
-    .map((e) => {
-      const lines = [
-        `### ${e.title} at ${e.company}`,
-        `${e.startDate} – ${e.endDate}${e.location ? ` | ${e.location}` : ''}`,
-      ];
-      if (e.description) lines.push(e.description);
-      if (e.tags?.length) lines.push(`Tags: ${e.tags.join(', ')}`);
-      return lines.join('\n');
+  // EXPERIENCE (full detail from resumeData)
+  const experience = resumeData.experience
+    .map((entry) => {
+      const header = `### ${entry.title} at ${entry.company} | ${entry.location}\n${entry.period}`;
+      const roles = entry.roles
+        .map((role) => {
+          const bullets = role.bullets.map((b) => `  - ${b}`).join('\n');
+          return `**${role.team}** (${role.period})\n${bullets}`;
+        })
+        .join('\n\n');
+      return `${header}\n\n${roles}`;
     })
     .join('\n\n');
-  sections.push('## CAREER\n' + career);
+  sections.push('## EXPERIENCE\n' + experience);
+
+  // PROJECTS
+  const projects = resumeData.projects
+    .map((p) => {
+      const bullets = p.bullets.map((b) => `  - ${b}`).join('\n');
+      return `### ${p.name} | ${p.role}\n${bullets}`;
+    })
+    .join('\n\n');
+  sections.push('## PROJECTS\n' + projects);
 
   // SKILLS
   const skills = resumeData.skillGroups
@@ -36,10 +45,7 @@ export function buildContext(): string {
 
   // EDUCATION
   const education = resumeData.education
-    .map((e) => {
-      const line = `- ${e.degree}, ${e.institution} (${e.year})${e.notes ? ` — ${e.notes}` : ''}`;
-      return line;
-    })
+    .map((e) => `- ${e.degree}, ${e.institution}${e.location ? ` — ${e.location}` : ''}`)
     .join('\n');
   sections.push('## EDUCATION\n' + education);
 

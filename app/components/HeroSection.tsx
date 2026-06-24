@@ -26,7 +26,7 @@ export default function HeroSection() {
       animate="show"
     >
       {/* Profile picture */}
-      <motion.div variants={item} className="mb-8">
+      <motion.div variants={item} className="mb-4">
         <div className="w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-accent/40 overflow-hidden">
           <Image
             src="/profile.jpeg"
@@ -60,10 +60,9 @@ export default function HeroSection() {
         variants={item}
         className="mt-5 text-text-secondary max-w-md leading-relaxed"
       >
-        Building software that connects the physical and digital worlds. Aerospace systems, developer tooling, and the occasional soccer deep-dive.
       </motion.p>
 
-      <motion.div variants={item} className="mt-8 flex flex-wrap justify-center gap-3">
+      <motion.div variants={item} className="mt-4 flex flex-wrap justify-center gap-3">
         <Link
           href="/about"
           className="inline-flex items-center gap-2 rounded-sm bg-accent text-background font-medium text-sm px-5 py-2.5 glow-accent hover:bg-amber-400 transition-colors"
@@ -75,6 +74,12 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 rounded-sm border border-border-panel text-text-primary text-sm px-5 py-2.5 hover:border-accent hover:text-accent transition-colors"
         >
           Resume ↗
+        </Link>
+        <Link
+          href="/ask"
+          className="inline-flex items-center gap-2 rounded-sm border border-border-panel text-text-primary text-sm px-5 py-2.5 hover:border-accent hover:text-accent transition-colors"
+        >
+          Ask AI ✦
         </Link>
       </motion.div>
     </motion.section>
