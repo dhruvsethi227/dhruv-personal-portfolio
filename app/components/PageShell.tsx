@@ -36,8 +36,8 @@ export default function PageShell({ children }: PageShellProps) {
             position: 'absolute',
             insetInline: 0,
             height: '3px',
-            background: 'linear-gradient(to right, transparent, rgba(245,158,11,0.35), transparent)',
-            boxShadow: '0 0 8px rgba(245,158,11,0.25)',
+            background: 'linear-gradient(to right, transparent, rgba(232,24,90,0.35), transparent)',
+            boxShadow: '0 0 8px rgba(232,24,90,0.25)',
             animation: 'scanline 8s linear infinite',
             pointerEvents: 'none',
           }}
