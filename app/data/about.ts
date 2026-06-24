@@ -11,40 +11,29 @@ export type AboutData = {
 
 export const aboutData: AboutData = {
   bio: [
-    "I'm a software engineer working at the intersection of aerospace systems and modern software. I build tools that help teams make better decisions, faster — whether that's flight software, data pipelines, or internal platforms.",
-    "Outside of work, I'm passionate about soccer at every level: playing, coaching, watching, and thinking about the game analytically. I've played competitively most of my life and believe team sports are one of the best teachers of collaboration and resilience.",
-    "I'm based in the United States and enjoy working on hard problems where software meets the physical world.",
+    "I'm a software engineer in the defense industry. I started at Lockheed Martin Skunk Works building mission-critical flight software, and now focus on full-stack applications across the enterprise — spanning aerospace products, backend optimization, and CI/CD infrastructure.",
+    "Outside of work, I was a 4-year starter on the UT Austin Men's Soccer Team and enjoy playing the piano.",
   ],
   interests: [
     {
-      label: "Aerospace Systems",
-      description: "Flight software, mission planning, and the engineering discipline required to ship reliable systems.",
+      label: "Mission-Critical Software",
+      description: "Building software that works in the field — real-time systems, operator-facing tools, and products where failure isn't an option.",
       icon: "🛰️",
     },
     {
-      label: "Soccer",
-      description: "Playing, coaching, and analyzing the beautiful game. Fan of tactical evolution and data-driven scouting.",
-      icon: "⚽",
+      label: "Defense & National Security Tech",
+      description: "Passionate about applying modern software to hard national security problems. Skunk Works taught me what's possible when you build with urgency and purpose.",
+      icon: "✈️",
     },
     {
-      label: "Systems Engineering",
-      description: "Designing software that interacts with the physical world — real-time constraints, hardware interfaces, reliability.",
+      label: "Applied AI & Data",
+      description: "Turning complex operational data into decisions — forecasting models, computer vision pipelines, and analytics that surface what matters.",
       icon: "⚙️",
     },
     {
-      label: "Developer Tooling",
-      description: "Building internal platforms and workflows that make engineering teams dramatically more productive.",
-      icon: "🛠️",
-    },
-    {
-      label: "Space Exploration",
-      description: "The long-term future of humanity in space. Fascinated by the engineering and policy challenges ahead.",
-      icon: "🚀",
-    },
-    {
-      label: "Team Building",
-      description: "Mentoring engineers, fostering cultures of ownership, and learning how great teams operate under pressure.",
-      icon: "🤝",
+      label: "Soccer",
+      description: "4-year starter on the UT Austin Men's Soccer Team. Still play competitively — high-performance teams are something I think about on and off the field.",
+      icon: "⚽",
     },
   ],
 };

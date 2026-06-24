@@ -17,18 +17,29 @@ const fadeUp = {
 export default function AboutPage() {
   return (
     <PageShell>
-      <section className="py-20">
+      <section className="pt-20 pb-4">
         <SectionHeader title="About" />
 
-        <motion.div className="space-y-4 mb-12" {...fadeUp}>
-          {aboutData.bio.map((paragraph, i) => (
-            <p key={i} className="text-text-secondary leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
+        <motion.div {...fadeUp}>
+          <div className="relative overflow-hidden rounded border border-border-panel bg-surface p-6">
+            <div className="absolute top-0 left-0 right-0 h-px bg-accent/70" />
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-accent/[0.08] to-transparent pointer-events-none" />
+            <div className="relative space-y-4">
+              {aboutData.bio.map((paragraph, i) => (
+                <p key={i} className="text-text-secondary leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
-        <h3 className="text-2xl font-bold text-text-primary mb-6">Interests</h3>
+      </section>
+
+      <CareerTimeline />
+
+      <section className="py-10">
+        <h3 className="text-2xl font-bold text-text-primary mb-4">Interests</h3>
 
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4" {...fadeUp}>
           {aboutData.interests.map((interest) => (
@@ -48,8 +59,6 @@ export default function AboutPage() {
           ))}
         </motion.div>
       </section>
-
-      <CareerTimeline />
 
       <footer className="pt-16 border-t border-border-panel text-text-secondary text-sm font-mono text-center">
         © {new Date().getFullYear()} Dhruv Sethi

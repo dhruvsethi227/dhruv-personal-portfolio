@@ -65,7 +65,7 @@ export default function HeroSection() {
       <motion.div variants={item} className="mt-4 flex flex-wrap justify-center gap-3">
         <Link
           href="/about"
-          className="inline-flex items-center gap-2 rounded-sm bg-accent text-background font-medium text-sm px-5 py-2.5 glow-accent hover:bg-amber-400 transition-colors"
+          className="inline-flex items-center gap-2 rounded-sm bg-accent text-background font-medium text-sm px-5 py-2.5 glow-accent hover:bg-rose-500 transition-colors"
         >
           About Me →
         </Link>

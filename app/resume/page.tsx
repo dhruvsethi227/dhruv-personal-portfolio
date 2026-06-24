@@ -24,7 +24,7 @@ export default function ResumePage() {
           <a
             href={resumeData.pdfPath}
             download="Dhruv_Sethi_Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-sm bg-accent text-background font-medium text-sm px-5 py-2.5 glow-accent hover:bg-amber-400 transition-colors"
+            className="inline-flex items-center gap-2 rounded-sm bg-accent text-background font-medium text-sm px-5 py-2.5 glow-accent hover:bg-rose-500 transition-colors"
           >
             ↓ Download PDF
           </a>

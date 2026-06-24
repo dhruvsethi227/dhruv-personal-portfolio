@@ -104,7 +104,7 @@ export default function AskDhruv() {
               key={q}
               onClick={() => handleChipClick(q)}
               disabled={loading}
-              className="font-mono text-xs px-3 py-1.5 border border-border-panel text-text-secondary hover:text-amber-400 hover:border-amber-400 transition-colors rounded-sm disabled:opacity-40 disabled:cursor-not-allowed"
+              className="font-mono text-xs px-3 py-1.5 border border-border-panel text-text-secondary hover:text-rose-500 hover:border-rose-500 transition-colors rounded-sm disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {q}
             </button>
@@ -119,7 +119,7 @@ export default function AskDhruv() {
                 {[0, 1, 2].map((i) => (
                   <span
                     key={i}
-                    className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-bounce"
+                    className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-bounce"
                     style={{ animationDelay: `${i * 0.15}s` }}
                   />
                 ))}
@@ -134,7 +134,7 @@ export default function AskDhruv() {
                   {response}
                 </ReactMarkdown>
                 {loading && (
-                  <span className="inline-block w-1.5 h-3.5 ml-0.5 bg-amber-400 animate-pulse align-middle" />
+                  <span className="inline-block w-1.5 h-3.5 ml-0.5 bg-rose-500 animate-pulse align-middle" />
                 )}
               </div>
             )}
@@ -156,12 +156,12 @@ export default function AskDhruv() {
             placeholder="Ask about my career, projects, or experience..."
             maxLength={500}
             disabled={loading}
-            className="flex-1 bg-background border border-border-panel rounded-sm px-3 py-2 font-mono text-sm text-text-primary placeholder:text-text-label focus:outline-none focus:border-amber-400 transition-colors disabled:opacity-50"
+            className="flex-1 bg-background border border-border-panel rounded-sm px-3 py-2 font-mono text-sm text-text-primary placeholder:text-text-label focus:outline-none focus:border-rose-500 transition-colors disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={loading || !question.trim()}
-            className="px-4 py-2 bg-amber-400 text-background font-mono text-sm font-semibold rounded-sm hover:bg-amber-300 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-rose-500 text-background font-mono text-sm font-semibold rounded-sm hover:bg-rose-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             →
           </button>

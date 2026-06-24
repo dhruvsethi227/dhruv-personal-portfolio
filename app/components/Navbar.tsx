@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="max-w-4xl mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="font-mono text-lg text-accent font-bold tracking-wider hover:text-amber-300 transition-colors"
+          className="font-mono text-lg text-accent font-bold tracking-wider hover:text-rose-400 transition-colors"
         >
           Dhruv Sethi
         </Link>

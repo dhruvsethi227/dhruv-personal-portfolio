@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060b18;
-  --foreground: #e2e8f0;
+  --background: #080e0a;
+  --foreground: #eef2ee;
 }
 
 @theme inline {
-  --color-background: #060b18;
-  --color-surface: #0d1a30;
-  --color-border-panel: #1e3a5f;
-  --color-accent: #f59e0b;
-  --color-text-primary: #e2e8f0;
-  --color-text-secondary: #94a3b8;
-  --color-text-label: #fbbf24;
+  --color-background: #080e0a;
+  --color-surface: #0e1b11;
+  --color-border-panel: #1c3822;
+  --color-accent: #e8185a;
+  --color-text-primary: #eef2ee;
+  --color-text-secondary: #7a9e85;
+  --color-text-label: #f472b6;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -29,7 +29,7 @@ html {
 
 /* Glow accent */
 .glow-accent {
-  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4), 0 0 24px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 0 12px rgba(232, 24, 90, 0.4), 0 0 24px rgba(232, 24, 90, 0.15);
 }
 
 /* Keyframe animations */
